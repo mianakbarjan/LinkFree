@@ -148,8 +148,8 @@ export default function ManageEvent({ BASE_URL, event }) {
         },
       }
     );
+    
     const update = await res.json();
-
     if (update.error || update.message) {
       return setShowNotification({
         show: true,
@@ -159,7 +159,7 @@ export default function ManageEvent({ BASE_URL, event }) {
       });
     }
 
-    return Router.push(`${BASE_URL}/account/manage/events`);
+    return Router.push(`${BASE_URL}/account/manage/events?deleted=true`);
   };
 
   return (
